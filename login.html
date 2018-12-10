@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <meta http-equiv="Pragma" content="no-cache" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <br><br>
+    <div class="row" id="app">
+        <div class="container">                    
+            <div class="col s12 m4 offset-m4">
+                <h4>Login</h4>
+                <p>Here you can provide your details to log in.</p>  
+                <transition name="custom-classes-transition" enter-active-class="animated bounceInLeft" leave-active-class="animated bounceOutRight">
+                    <p v-if="errr" style="color: red; margin-bottom: 20px" >{{ err_data }}</p>
+                    <p v-if="suc" style="color: green; margin-bottom: 20px" >{{ success_data }}</p>
+                </transition>
+                <form @submit.prevent="login">
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <label for="f_name">Email ID</label>
+                            <input id="f_name" type="email" name="email" required>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <label for="l_name">Password</label>
+                            <input id="l_name" type="password" name="password" required>
+                        </div>
+                        <button type="submit" class="btn green white-text waves-effect waves-green" style="text-transform: none; border-radius: 25px">Login</button>
+                        <p>Don't have account, <a href="register.html">Click here to Register</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/vue-cookies@1.5.7/vue-cookies.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <meta http-equiv="Pragma" content="no-cache" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <br><br>
+    <div class="row" id="app">
+        <div class="container">                    
+            <div class="col s12 m4 offset-m4">
+                <h5>Welcome {{ name }},</h5>
+                <p>Application is developed using Vue Js with Axios & Vue Cookies.</p>  
+                <p>
+                    <b>Email ID:</b> {{ email }},<br>
+                    <b>Mobile:</b> {{ mobile }},<br>
+                    <b>Address:</b> {{ address }}
+                </p>
+                <p>
+                    Want to create application like this ?<br>
+                    Pick up your phone and ring +91-0000000000
+                </p>
+                <br>
+                <form @submit.prevent="logout">
+                    <button type="submit" class="btn white-text waves-effect waves-green red text-white" style="width: 100%; text-transform: none; border-radius: 25px">Log Out</button>                    
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/vue-cookies@1.5.7/vue-cookies.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
