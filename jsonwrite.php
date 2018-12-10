@@ -7,15 +7,18 @@ $dept=$_POST['dept'];
 $college=$_POST['college'];
 $city=$_POST['city'];
 
-$myObj->name = $uname;
-$myObj->email = $email;
-$myObj->mobile = $mobile;
-$myObj->degree = $degree;
-$myObj->dept = $dept;
-$myObj->college = $college;
-$myObj->city = $city;
+$jsdata=array("Name"=>$uname,"Email"=>$email,"mobile"=>$mobile,"degree"=>$degree,"dept"=>$dept,"college"=>$college,"city"=>$city);
 
-$myJSON = json_encode($myObj);
+$json_data = json_encode($jsdata,JSON_PRETTY_PRINT);
+//$php_array_data=json_decode($json_data,JSON_PRETTY_PRINT);
 
-echo $myJSON;
+// echo $json_data;
+// echo'<pre>';
+// print_r($php_array_data);
+
+$myfile = fopen("newnameuq.json", "w") or die("Unable to open file!");
+fwrite($myfile, $json_data);
+fclose($myfile);
+echo readfile("newnameuq.json");
+
 ?>
